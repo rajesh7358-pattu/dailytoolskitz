@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Video, BrainCircuit, Code, Music, Palette, Camera, LineChart, Gamepad, Book, Cloud, Coffee, Brush, Smartphone } from 'lucide-react';
+import { Video, BrainCircuit, Code, HeartPulse, Megaphone, Music, BookOpen, DollarSign, Palette, Camera, LineChart, Gamepad, Book, Cloud, Coffee, Brush, Smartphone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase, type Category } from '../lib/supabase';
 import toast from 'react-hot-toast';
 
 const iconMap: { [key: string]: any } = {
-  Video, BrainCircuit, Code, Music, Palette, Camera, LineChart,
+  Video, BrainCircuit, Code, Music, HeartPulse, Megaphone, BookOpen, DollarSign, Palette, Camera, LineChart,
   Gamepad, Book, Cloud, Coffee, Brush, Smartphone
 };
 
