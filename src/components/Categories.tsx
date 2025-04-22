@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Video, Code, Music, Palette, Megaphone , Camera, BrainCircuit, LineChart, BookOpen, DollarSign, Gamepad, Book, Cloud, Coffee, Brush, Smartphone, Search } from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase, type Category } from '../lib/supabase';
 import toast from 'react-hot-toast';
-
-const iconMap: { [key: string]: any } = {
-  Video, Code, Music, Palette, Camera, LineChart, BrainCircuit, Megaphone, BookOpen,
-  Gamepad, DollarSign, Book, Cloud, Coffee, Brush, Smartphone
-};
 
 const container = {
   hidden: { opacity: 0 },
@@ -146,7 +141,7 @@ export default function Categories() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-6 py-4 pl-14 rounded-xl bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-lg"
               />
-              <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6" />
+              <LucideIcons.Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6" />
             </div>
           </div>
         </motion.div>
@@ -158,7 +153,7 @@ export default function Categories() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {filteredCategories.map((category, index) => {
-            const Icon = iconMap[category.icon] || Code;
+            const IconComponent = (LucideIcons as any)[category.icon] || LucideIcons.Code;
             const gradient = gradients[index % gradients.length];
             
             return (
@@ -184,7 +179,7 @@ export default function Categories() {
                         className="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                      <Icon 
+                      <IconComponent 
                         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-16 w-16 text-white opacity-90 drop-shadow-lg transition-all duration-500 ease-out group-hover:scale-110 group-hover:rotate-3"
                       />
                     </div>
