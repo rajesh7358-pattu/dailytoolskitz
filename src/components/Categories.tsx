@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Video, Code, Music, Palette, Megaphone , Camera, BrainCircuit, LineChart, BookOpen, DollerSign, Gamepad, Book, Cloud, Coffee, Brush, Smartphone, Search } from 'lucide-react';
+import { Video, Code, Music, Palette, Megaphone , Camera, BrainCircuit, LineChart, BookOpen, DollarSign, Gamepad, Book, Cloud, Coffee, Brush, Smartphone, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase, type Category } from '../lib/supabase';
 import toast from 'react-hot-toast';
 
 const iconMap: { [key: string]: any } = {
   Video, Code, Music, Palette, Camera, LineChart, BrainCircuit, Megaphone, BookOpen,
-  Gamepad, DollerSign, Book, Cloud, Coffee, Brush, Smartphone
+  Gamepad, DollarSign, Book, Cloud, Coffee, Brush, Smartphone
 };
 
 const container = {
